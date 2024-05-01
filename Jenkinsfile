@@ -27,7 +27,7 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                    docker.image("tahir:${env.BUILD_NUMBER}").run("-d -p 8086:8090 --name demo-container")
+                    docker.image("tahir:${env.BUILD_NUMBER}").run("-d -p 6565:6565 --name demo-container")
                 }
             }
         }
