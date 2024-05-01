@@ -13,6 +13,4 @@ public class controller {
     public String deneme2(){
         return "asdasda";
     }
-
-
 }

@@ -7,7 +7,7 @@ pipeline {
         stage('Build Maven') {
             steps {
                 checkout scmGit(
-                    branches: [[name: '*/main']],
+                    branches: [[name: '*/master']],
                     userRemoteConfigs: [[url: 'https://github.com/tahirtolu/DockerJenkins']]
                 )
                 bat 'mvn clean install'
@@ -17,7 +17,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    docker.build("tahir:${env.BUILD_NUMBER}")
+                    docker.build("deneme2:${env.BUILD_NUMBER}")
                 }
             }
         }
