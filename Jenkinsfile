@@ -17,7 +17,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    docker.build("deneme2:${env.BUILD_NUMBER}")
+                    docker.build("tahir:${env.BUILD_NUMBER}")
                 }
             }
         }
