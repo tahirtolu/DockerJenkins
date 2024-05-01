@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-            JAVA_HOME = 'C:\\Program Files\\Java\\jdk-21'
-        }
+        JAVA_HOME = 'C:\\Program Files\\Java\\jdk-21'
+    }
     tools {
         maven 'maven'
     }
@@ -24,13 +24,13 @@ pipeline {
                 }
             }
         }
-        stage('Push image to Hub'){
+
+        stage('Run docker container'){
             steps{
                 script{
-                    docker.image("tahir:${env.BUILD_NUMBER}").run("-d -p :80 --name demo-container")
+                    docker.image("tahir:${env.BUILD_NUMBER}").run("-d -p 6565:6565 --name demo-container")
                 }
             }
         }
     }
-
 }
