@@ -11,6 +11,6 @@ public class controller {
 
     @GetMapping("/all")
     public String deneme2(){
-        return "tahirrrtolu";
+        return "tahir tolu 65";
     }
 }
